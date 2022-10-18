@@ -5,14 +5,14 @@ using UnityEngine;
 public class GolfBall : MonoBehaviour
 {
     public float power = 5f;
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private Vector3 startPos;
     private Vector3 endPos;
     private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class GolfBall : MonoBehaviour
             direction.y = 0f;
             
 
-            rigidbody.AddForce(direction*power);
+            rb.AddForce(direction*power);
         }
     }
 }
