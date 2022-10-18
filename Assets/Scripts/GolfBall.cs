@@ -6,9 +6,9 @@ public class GolfBall : MonoBehaviour
 {
     public float power = 5f;
     private Rigidbody rigidbody;
-    private Vector2 startPos;
-    private Vector2 endPos;
-    private Vector2 direction;
+    private Vector3 startPos;
+    private Vector3 endPos;
+    private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +46,10 @@ public class GolfBall : MonoBehaviour
                 endPos = hit.point;
             }
             direction=startPos - endPos;
+           
+            direction.y = 0f;
+            
+
             rigidbody.AddForce(direction*power);
         }
     }
