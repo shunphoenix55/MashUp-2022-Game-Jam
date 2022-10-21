@@ -34,6 +34,13 @@ public class GolfBall : MonoBehaviour
         }
            
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            collision.gameObject.SetActive(false);
+        }
+    }
     private void OnMouseUp()
     {
         if (Input.GetMouseButtonUp(0))
